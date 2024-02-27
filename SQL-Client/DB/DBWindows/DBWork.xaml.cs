@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -34,22 +35,37 @@ namespace SQL_Client.DB
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            using(SqlCommand command = new SqlCommand(quireTextBox.Text, con))
+            DBQueryHandler dBQueryHandler = new DBQueryHandler(quireTextBox.Text,
+                                                                con);
+            try
             {
-                switch(ParseQueri(quireTextBox.Text))
+                using (SqlCommand command = new SqlCommand(quireTextBox.Text, con))
                 {
-                    case "reader":
-                        answerTextBox.Text = quireTextBox.Text;
-                        break;
-                    case "nonquery":
-                        answerTextBox.Text = quireTextBox.Text;
-                        break;
-                    default:
-                        answerTextBox.Text = "Неизвестный тип запроса, повторите попытку";
-                        break;
+                    switch (ParseQueri(quireTextBox.Text))
+                    {
+                        case "reader":
+                            DataTable dt = dBQueryHandler.Query();
+                            dataGridView.Visibility = Visibility.Visible;
+                            dataGridView.ItemsSource = dt.DefaultView;
+                            break;
+                        case "nonquery":
+                            answerTextBox.Visibility = Visibility.Visible;
+                            dataGridView.Visibility = Visibility.Hidden;
+                            answerTextBox.Text = dBQueryHandler.Query(quireTextBox.Text);
+                            break;
+                        default:
+                            answerTextBox.Visibility = Visibility.Visible;
+                            dataGridView.Visibility = Visibility.Hidden;
+                            answerTextBox.Text = "Ваш запрос некорректен, пожалуйста проверьте правильность" +
+                                "написания вашего запроса";
+                            break;
+                    }
+
                 }
-                
+            }
+            catch
+            {
+                MessageBox.Show("в тело вашего запроса закралась ошибка, повторите попытку");
             }
         }
 
