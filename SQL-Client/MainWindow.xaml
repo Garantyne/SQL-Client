@@ -1,0 +1,18 @@
+﻿<Window x:Class="SQL_Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQL_Client"
+        mc:Ignorable="d"
+        Title="ConnectionWindow" Height="600" Width="1000" FontSize="30">
+    <Grid>
+        <Button x:Name="ConnectButton" FontSize="30" Content="Подключиться" HorizontalAlignment="Left" Margin="70,467,0,0" VerticalAlignment="Top" Height="69" Width="230" Click="ConnectButton_Click" />
+        <Button x:Name="ExitButton" FontSize="30" Content="Выйти" HorizontalAlignment="Left" Margin="714,467,0,0" VerticalAlignment="Top" Height="69" Width="230" Click="ExitButton_Click"/>
+        <TextBox LostFocus="serverNameTextBox_LostFocus" GotFocus="serverNameTextBox_GotFocus" x:Name="serverNameTextBox" TextAlignment="Left" MaxLength="500" HorizontalAlignment="Left" Margin="471,48,0,0" TextWrapping="Wrap" Text="Введите данные сервера" VerticalAlignment="Top" Width="487" Height="48" FontSize="25" />
+        <TextBox LostFocus="DataBaseTextBox_LostFocus" GotFocus="DataBaseTextBox_GotFocus" x:Name="DataBaseTextBox" TextAlignment="Left" MaxLength="500" HorizontalAlignment="Left" Margin="471,248,0,0" TextWrapping="Wrap" Text="Введите название базы данных" VerticalAlignment="Top" Width="487" Height="48" FontSize="25"/>
+        <Label Content="MS SQL Server:" HorizontalAlignment="Left" Margin="75,48,0,0" VerticalAlignment="Top" Height="48" Width="177" FontSize="25" />
+        <Label Content="DataBase:" HorizontalAlignment="Left" Margin="75,248,0,0" VerticalAlignment="Top" Height="48" Width="177" FontSize="25" />
+
+    </Grid>
+</Window>

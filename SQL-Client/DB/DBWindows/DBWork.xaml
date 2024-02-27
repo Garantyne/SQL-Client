@@ -1,0 +1,18 @@
+﻿<Window x:Class="SQL_Client.DB.DBWork"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SQL_Client.DB"
+        mc:Ignorable="d"
+        Title="Окно запросов" FontSize="20" Height="550" Width="800">
+    <Grid>
+        <TextBox x:Name="quireTextBox" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Left" Margin="50,70,0,0" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="100"/>
+        <Label Content="Quire:" HorizontalAlignment="Left" Margin="50,19,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <TextBox x:Name="answerTextBox" IsReadOnly="True" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Center" Margin="0,217,0,0" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="200"/>
+        <Label Content="Quire Answer:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top" FontSize="30"/>
+        <Button Content="Выполнить запрос" FontSize = "25" HorizontalAlignment="Left" Margin="50,454,0,0" VerticalAlignment="Top" Height="55" Width="218" Click="Button_Click_1"/>
+        <Button Content="Выход" FontSize="25" HorizontalAlignment="Left" Margin="532,454,0,0" VerticalAlignment="Top" Height="55" Width="218" Click="Button_Click"/>
+
+    </Grid>
+</Window>
