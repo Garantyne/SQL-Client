@@ -9,10 +9,11 @@
     <Grid>
         <TextBox x:Name="quireTextBox" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Left" Margin="50,70,0,0" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="100"/>
         <Label Content="Quire:" HorizontalAlignment="Left" Margin="50,19,0,0" VerticalAlignment="Top" FontSize="30"/>
-        <TextBox x:Name="answerTextBox" IsReadOnly="True" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Center" Margin="0,217,0,0" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="200"/>
         <Label Content="Quire Answer:" HorizontalAlignment="Left" Margin="50,167,0,0" VerticalAlignment="Top" FontSize="30"/>
         <Button Content="Выполнить запрос" FontSize = "25" HorizontalAlignment="Left" Margin="50,454,0,0" VerticalAlignment="Top" Height="55" Width="218" Click="Button_Click_1"/>
         <Button Content="Выход" FontSize="25" HorizontalAlignment="Left" Margin="532,454,0,0" VerticalAlignment="Top" Height="55" Width="218" Click="Button_Click"/>
+        <TextBox Visibility="Hidden" x:Name="answerTextBox" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Left" Margin="50,222,69,130" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="100"/>
+        <DataGrid  x:Name="dataGridView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,222,69,130"/>
 
     </Grid>
 </Window>
