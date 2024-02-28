@@ -72,7 +72,7 @@ namespace SQL_Client
                 DataBaseTextBox.Text)
                 )
             {
-
+                
                 Hide();
                 //new form тут
                 DBWork dBWork = new DBWork(con);
