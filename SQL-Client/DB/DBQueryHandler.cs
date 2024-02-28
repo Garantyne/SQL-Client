@@ -10,14 +10,15 @@ namespace SQL_Client.DB
 {
     internal class DBQueryHandler
     {        
+        public string com {  get; set; }
         public SqlConnection connection { get; set; }
-        public SqlDataAdapter adapter { get; set; }
+        
 
         public DBQueryHandler(string text, SqlConnection con) {
            
+            com = text;
             connection = con;
-            //вытягиваем данные из БД переданым запросом
-            adapter = new SqlDataAdapter(text, connection);
+            
         }
 
         public DataTable Query()
@@ -26,7 +27,12 @@ namespace SQL_Client.DB
             DataTable dt = new DataTable();
             //передаем в адаптер дата тейбл, для того, что бы в него записались все строки
             // которые мы получили от запроса
-            adapter.Fill(dt);
+            using (SqlCommand command = new SqlCommand(com, connection))
+            {
+                SqlDataReader red = command.ExecuteReader();
+                
+                dt.Load(red);
+            }
             return dt;
         }
 

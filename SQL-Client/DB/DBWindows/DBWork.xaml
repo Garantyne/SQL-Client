@@ -14,6 +14,8 @@
         <Button Content="Выход" FontSize="25" HorizontalAlignment="Left" Margin="532,454,0,0" VerticalAlignment="Top" Height="55" Width="218" Click="Button_Click"/>
         <TextBox Visibility="Hidden" x:Name="answerTextBox" TextWrapping="Wrap" FontFamily="Consolas" HorizontalAlignment="Left" Margin="50,222,69,130" FontSize="20" Text="" VerticalAlignment="Top" Width="700" Height="100"/>
         <DataGrid  x:Name="dataGridView" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="50,222,69,130"/>
+        <Label x:Name="servernNameLabel" Content="Имя Свервера: " HorizontalAlignment="Left" Margin="302,7,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="DBNameLabel" Content="Имя БД: " HorizontalAlignment="Left" Margin="302,28,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.282,0.209"/>
 
     </Grid>
 </Window>

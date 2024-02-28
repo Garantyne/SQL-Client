@@ -26,6 +26,8 @@ namespace SQL_Client.DB
         {
             InitializeComponent();
             this.con = con;
+            servernNameLabel.Content = $"Имя Свервера: {con.DataSource}";
+            DBNameLabel.Content = $"Имя DB: {con.Database}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,6 +44,7 @@ namespace SQL_Client.DB
             {
                 using (SqlCommand command = new SqlCommand(quireTextBox.Text, con))
                 {
+                    
                     switch (ParseQueri(quireTextBox.Text))
                     {
                         case "reader":
